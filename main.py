@@ -11,6 +11,7 @@ def f(x):
 #Recebendo os valores do intervalo [a, b]
 a = float(input("a: ")) 
 b = float(input("b: ")) 
+x = float()
 
 #Declaração do critério de parada
 epsilon = b - a
@@ -25,9 +26,17 @@ stop = 10**(-1*n)
 if(f(a) * f(b) < 0):
 
     while epsilon > stop:
+
+        
+
+        if(x != None): epsilon = x
+        
         x = (b + a)/2
 
+        epsilon = abs(x - epsilon) 
+
         if(f(x) == 0):
+            print(f"x = {x} é a raiz exata")
             print(f"f({x}) = {f(x)}")
             break
 
@@ -37,7 +46,8 @@ if(f(a) * f(b) < 0):
         else:
             a = x
 
-        epsilon = abs(f(x))
+        #epsilon = abs(f(x))
+
         print(f"f({x}) = {f(x)}")
 
 else:
