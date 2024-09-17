@@ -11,8 +11,8 @@ def linha():
 
 #Definição da função f(x)
 def f(x):
-    return x**2 - 16
-funcao = 'f(x) = x^2 - 16'
+    return abs(x) - 2
+funcao = 'f(x) = |x| - 2'
 
 
 #Recebendo os valores do intervalo [a, b]
@@ -50,7 +50,7 @@ dataTabela["an"].append(round(a, 5))
 dataTabela["bn"].append(round(b, 5))
 dataTabela["ε"].append("--")
 dataTabela["xn"].append(xn)
-dataTabela["f(xn)"].append(f(xn))
+dataTabela["f(xn)"].append(round(f(xn), 5))
 
 #Calculando o valor aproximado de x1
 if(f(a) * f(b) < 0):
@@ -123,6 +123,11 @@ plt.savefig('images/grafico.png', dpi=300, bbox_inches='tight')
 
 
 
+
+
+
+
+
 #Gerando Tabela
 # Crie um DataFrame
 df = pd.DataFrame(dataTabela)
@@ -145,6 +150,9 @@ tabela.scale(2, 1.2)
 
 # Salve a tabela como uma imagem PNG
 plt.savefig('images/tabela.png', dpi=300, bbox_inches='tight')
+
+
+
 
 
 
